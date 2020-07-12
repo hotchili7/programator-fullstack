@@ -1,7 +1,9 @@
 import express from "express";
-import orders from './orders.js'
+import orders from './orders.js';
+import cart from "./cart.js";
+import products from './products.js';
+import users from './users.js';
 import wishlist from "./wishlist.js";
-
 
 const routes = express.Router({});
 
@@ -10,32 +12,10 @@ routes.get("/", (req, res) => {
 });
 
 routes.use('/orders', orders)
-
-
-
-// routes.use('/products')
-// routes.get("/products", (req, res) => {
-//   res.send(["produkt 1"]);
-// });
+routes.use("/cart", cart);
+routes.use('/products', products)
 routes.use("/wishlist", wishlist);
-
-// Aneta
-// routes.use('/users')
-
-// Jakub
-// routes.use('/comments')
-
-// Damian
-// routes.use('/categories')
-
-// Kasia
-// routes.use('/orders')
-
-// Maciej
-// routes.use('/cart')
-
-// Liumila
-// routes.use('/wishlist')
-
+routes.use("/users", users);
 
 export default routes;
+
