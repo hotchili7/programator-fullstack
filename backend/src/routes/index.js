@@ -1,5 +1,7 @@
 import express from "express";
 import orders from './orders.js'
+import wishlist from "./wishlist.js";
+
 
 const routes = express.Router({});
 
@@ -15,6 +17,7 @@ routes.use('/orders', orders)
 // routes.get("/products", (req, res) => {
 //   res.send(["produkt 1"]);
 // });
+routes.use("/wishlist", wishlist);
 
 // Aneta
 // routes.use('/users')
